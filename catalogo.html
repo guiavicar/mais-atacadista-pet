@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo Atacado | Mais Atacadista Pet</title>
+<meta name="description" content="Catálogo atacadista de produtos pet: alimentação, farmácia veterinária, higiene, brinquedos e acessórios. Preços liberados apenas para clientes com CNPJ cadastrado.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><strong>PREÇOS RESTRITOS:</strong> a tabela de atacado é liberada somente para clientes com CNPJ aprovado.</span>
+    <div class="topbar-links">
+      <a href="tel:+551140028922">(11) 4002-8922</a>
+      <a href="cadastro.html">Área do lojista</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="brand" aria-label="Mais Atacadista Pet — início">
+        <img src="assets/logo.jpg" alt="Logomarca Mais Atacadista Pet">
+        <span class="brand-txt"><b class="metal">MAIS</b><span>ATACADISTA PET</span></span>
+      </a>
+      <ul class="menu" id="menu">
+        <li><a href="index.html#categorias">Categorias</a></li>
+        <li><a href="catalogo.html" class="active">Catálogo</a></li>
+        <li><a href="index.html#condicoes">Condições</a></li>
+        <li><a href="index.html#logistica">Logística</a></li>
+        <li><a href="index.html#faq">Dúvidas</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="index.html#contato" class="btn btn--ghost btn--sm">Falar com o comercial</a>
+        <a href="cadastro.html" class="btn btn--primary btn--sm">Abrir cadastro</a>
+        <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Início</a> / Catálogo atacado</p>
+    <span class="eyebrow">Linha completa</span>
+    <h1 style="font-size:clamp(2rem,4vw,3.2rem)"><span class="metal">CATÁLOGO</span> <span class="brandtext">ATACADO</span></h1>
+    <p class="lead" style="margin-top:16px">
+      Vitrine de referência do nosso mix. Os preços, a disponibilidade em tempo real e os múltiplos
+      de caixa fechada ficam visíveis dentro da área do lojista, após a aprovação do CNPJ.
+    </p>
+    <div class="hero-actions" style="margin-top:26px">
+      <a href="cadastro.html" class="btn btn--primary">Liberar tabela de preços</a>
+      <a href="index.html#condicoes" class="btn btn--ghost">Ver condições comerciais</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <div class="cat-layout">
+
+      <aside class="filters">
+        <div class="group">
+          <h4>Buscar</h4>
+          <div class="field" style="margin:0">
+            <input id="prod-search" type="search" placeholder="Produto, marca ou SKU" autocomplete="off">
+          </div>
+        </div>
+        <div class="group">
+          <h4>Categorias</h4>
+          <ul>
+            <li><button class="fbtn active" data-cat="todos">Todas as linhas<small>32</small></button></li>
+          <li><button class="fbtn" data-cat="alimentacao">Alimentação<small>6</small></button></li>
+          <li><button class="fbtn" data-cat="farmacia">Farmácia Vet<small>6</small></button></li>
+          <li><button class="fbtn" data-cat="higiene">Higiene & Banho<small>6</small></button></li>
+          <li><button class="fbtn" data-cat="brinquedos">Brinquedos<small>4</small></button></li>
+          <li><button class="fbtn" data-cat="acessorios">Coleiras & Acessórios<small>6</small></button></li>
+          <li><button class="fbtn" data-cat="tosa">Banho & Tosa<small>4</small></button></li>
+          </ul>
+        </div>
+        <div class="group">
+          <h4>Precisa de ajuda?</h4>
+          <p style="font-size:.86rem;color:var(--tx-2);margin:0 0 14px">
+            Não encontrou um item? Nosso mix completo tem mais de 2.500 SKUs sob consulta.
+          </p>
+          <a href="index.html#contato" class="btn btn--dark btn--sm btn--block">Solicitar item</a>
+        </div>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <p class="count"><b id="prod-count">0</b> produtos exibidos · mix parcial</p>
+          <div class="field" style="margin:0;min-width:220px">
+            <select id="prod-sort" aria-label="Ordenar produtos">
+              <option value="destaque">Ordenar: destaques</option>
+              <option value="az">Nome (A–Z)</option>
+              <option value="caixa">Maior múltiplo de caixa</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="prod-grid" id="prod-grid">
+        <article class="prod rv" data-sku="RC-1501" data-cat="alimentacao" data-ordem="0"
+                 data-nome="Ração Super Premium Adulto Cães 15kg" data-caixa="4" data-busca="racao super premium adulto caes 15kg nutrivita alimentacao rc-1501">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h16l-1.4 11.2A2 2 0 0 1 16.6 21H7.4a2 2 0 0 1-2-1.8L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Alimentação · Nutrivita</span>
+            <h3>Ração Super Premium Adulto Cães 15kg</h3>
+            <div class="prod-meta">
+              <span>Saco 15 kg</span>
+              <span>Cx. 4 un</span>
+              <span>SKU RC-1501</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="RC-1020" data-cat="alimentacao" data-ordem="1"
+                 data-nome="Ração Premium Filhotes Raças Pequenas 10,1kg" data-caixa="6" data-busca="racao premium filhotes racas pequenas 10,1kg nutrivita alimentacao rc-1020">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h16l-1.4 11.2A2 2 0 0 1 16.6 21H7.4a2 2 0 0 1-2-1.8L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Alimentação · Nutrivita</span>
+            <h3>Ração Premium Filhotes Raças Pequenas 10,1kg</h3>
+            <div class="prod-meta">
+              <span>Saco 10,1 kg</span>
+              <span>Cx. 6 un</span>
+              <span>SKU RC-1020</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="RG-0301" data-cat="alimentacao" data-ordem="2"
+                 data-nome="Ração Gatos Castrados Salmão 3kg" data-caixa="12" data-busca="racao gatos castrados salmao 3kg felinepro alimentacao rg-0301">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h16l-1.4 11.2A2 2 0 0 1 16.6 21H7.4a2 2 0 0 1-2-1.8L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Alimentação · FelinePro</span>
+            <h3>Ração Gatos Castrados Salmão 3kg</h3>
+            <div class="prod-meta">
+              <span>Saco 3 kg</span>
+              <span>Cx. 12 un</span>
+              <span>SKU RG-0301</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="SA-0085" data-cat="alimentacao" data-ordem="3"
+                 data-nome="Sachê Cães Sabor Carne 85g" data-caixa="240" data-busca="sache caes sabor carne 85g totalcao alimentacao sa-0085">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h16l-1.4 11.2A2 2 0 0 1 16.6 21H7.4a2 2 0 0 1-2-1.8L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Alimentação · TotalCão</span>
+            <h3>Sachê Cães Sabor Carne 85g</h3>
+            <div class="prod-meta">
+              <span>Display 20 un</span>
+              <span>Cx. 240 un</span>
+              <span>SKU SA-0085</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="SA-0086" data-cat="alimentacao" data-ordem="4"
+                 data-nome="Sachê Gatos Frango ao Molho 85g" data-caixa="240" data-busca="sache gatos frango ao molho 85g miaumix alimentacao sa-0086">
+          <div class="prod-top"><span class="prod-badge">Novo</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h16l-1.4 11.2A2 2 0 0 1 16.6 21H7.4a2 2 0 0 1-2-1.8L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Alimentação · MiauMix</span>
+            <h3>Sachê Gatos Frango ao Molho 85g</h3>
+            <div class="prod-meta">
+              <span>Display 20 un</span>
+              <span>Cx. 240 un</span>
+              <span>SKU SA-0086</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="PT-0500" data-cat="alimentacao" data-ordem="5"
+                 data-nome="Petisco Bifinho Carne 500g" data-caixa="20" data-busca="petisco bifinho carne 500g dogfort alimentacao pt-0500">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 8h16l-1.4 11.2A2 2 0 0 1 16.6 21H7.4a2 2 0 0 1-2-1.8L4 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Alimentação · DogFort</span>
+            <h3>Petisco Bifinho Carne 500g</h3>
+            <div class="prod-meta">
+              <span>Pacote 500 g</span>
+              <span>Cx. 20 un</span>
+              <span>SKU PT-0500</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="AR-0900" data-cat="higiene" data-ordem="6"
+                 data-nome="Areia Higiênica Sílica Gatos 1,6kg" data-caixa="10" data-busca="areia higienica silica gatos 1,6kg miaumix higiene & banho ar-0900">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M6.5 5.5 5 4M17.5 5.5 19 4M6.5 18.5 5 20M17.5 18.5 19 20"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Higiene & Banho · MiauMix</span>
+            <h3>Areia Higiênica Sílica Gatos 1,6kg</h3>
+            <div class="prod-meta">
+              <span>Pacote 1,6 kg</span>
+              <span>Cx. 10 un</span>
+              <span>SKU AR-0900</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="TP-0080" data-cat="higiene" data-ordem="7"
+                 data-nome="Tapete Higiênico 80x60 — 30 un" data-caixa="8" data-busca="tapete higienico 80x60 — 30 un petgroom higiene & banho tp-0080">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M6.5 5.5 5 4M17.5 5.5 19 4M6.5 18.5 5 20M17.5 18.5 19 20"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Higiene & Banho · PetGroom</span>
+            <h3>Tapete Higiênico 80x60 — 30 un</h3>
+            <div class="prod-meta">
+              <span>Fardo 30 un</span>
+              <span>Cx. 8 un</span>
+              <span>SKU TP-0080</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="SH-0500" data-cat="higiene" data-ordem="8"
+                 data-nome="Shampoo Neutro Cães e Gatos 500ml" data-caixa="12" data-busca="shampoo neutro caes e gatos 500ml petgroom higiene & banho sh-0500">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M6.5 5.5 5 4M17.5 5.5 19 4M6.5 18.5 5 20M17.5 18.5 19 20"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Higiene & Banho · PetGroom</span>
+            <h3>Shampoo Neutro Cães e Gatos 500ml</h3>
+            <div class="prod-meta">
+              <span>Frasco 500 ml</span>
+              <span>Cx. 12 un</span>
+              <span>SKU SH-0500</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="SH-0501" data-cat="higiene" data-ordem="9"
+                 data-nome="Shampoo Antipulgas 500ml" data-caixa="12" data-busca="shampoo antipulgas 500ml bioanimal higiene & banho sh-0501">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M6.5 5.5 5 4M17.5 5.5 19 4M6.5 18.5 5 20M17.5 18.5 19 20"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Higiene & Banho · BioAnimal</span>
+            <h3>Shampoo Antipulgas 500ml</h3>
+            <div class="prod-meta">
+              <span>Frasco 500 ml</span>
+              <span>Cx. 12 un</span>
+              <span>SKU SH-0501</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CD-0500" data-cat="higiene" data-ordem="10"
+                 data-nome="Condicionador Pelos Longos 500ml" data-caixa="12" data-busca="condicionador pelos longos 500ml petgroom higiene & banho cd-0500">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M6.5 5.5 5 4M17.5 5.5 19 4M6.5 18.5 5 20M17.5 18.5 19 20"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Higiene & Banho · PetGroom</span>
+            <h3>Condicionador Pelos Longos 500ml</h3>
+            <div class="prod-meta">
+              <span>Frasco 500 ml</span>
+              <span>Cx. 12 un</span>
+              <span>SKU CD-0500</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CL-0120" data-cat="higiene" data-ordem="11"
+                 data-nome="Colônia Pet Fixação Prolongada 120ml" data-caixa="24" data-busca="colonia pet fixacao prolongada 120ml petgroom higiene & banho cl-0120">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3.2"/><path d="M6.5 5.5 5 4M17.5 5.5 19 4M6.5 18.5 5 20M17.5 18.5 19 20"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Higiene & Banho · PetGroom</span>
+            <h3>Colônia Pet Fixação Prolongada 120ml</h3>
+            <div class="prod-meta">
+              <span>Frasco 120 ml</span>
+              <span>Cx. 24 un</span>
+              <span>SKU CL-0120</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="VM-0004" data-cat="farmacia" data-ordem="12"
+                 data-nome="Vermífugo Amplo Espectro 4 comp." data-caixa="50" data-busca="vermifugo amplo espectro 4 comp. vetpharma farmacia vet vm-0004">
+          <div class="prod-top"><span class="prod-badge">Controlado</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6"/><path d="M9 8h6l1 12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L9 8z"/><path d="M9.5 14h5"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Farmácia Vet · VetPharma</span>
+            <h3>Vermífugo Amplo Espectro 4 comp.</h3>
+            <div class="prod-meta">
+              <span>Cartela 4 comp.</span>
+              <span>Cx. 50 un</span>
+              <span>SKU VM-0004</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="AP-0110" data-cat="farmacia" data-ordem="13"
+                 data-nome="Antipulgas Tópico Cães 10–20kg" data-caixa="30" data-busca="antipulgas topico caes 10–20kg canislab farmacia vet ap-0110">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6"/><path d="M9 8h6l1 12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L9 8z"/><path d="M9.5 14h5"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Farmácia Vet · CanisLab</span>
+            <h3>Antipulgas Tópico Cães 10–20kg</h3>
+            <div class="prod-meta">
+              <span>Caixa 3 pipetas</span>
+              <span>Cx. 30 un</span>
+              <span>SKU AP-0110</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="AP-0210" data-cat="farmacia" data-ordem="14"
+                 data-nome="Antipulgas Tópico Gatos até 8kg" data-caixa="30" data-busca="antipulgas topico gatos ate 8kg canislab farmacia vet ap-0210">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6"/><path d="M9 8h6l1 12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L9 8z"/><path d="M9.5 14h5"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Farmácia Vet · CanisLab</span>
+            <h3>Antipulgas Tópico Gatos até 8kg</h3>
+            <div class="prod-meta">
+              <span>Caixa 3 pipetas</span>
+              <span>Cx. 30 un</span>
+              <span>SKU AP-0210</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="SU-0060" data-cat="farmacia" data-ordem="15"
+                 data-nome="Suplemento Articular Condroitina 60 comp." data-caixa="24" data-busca="suplemento articular condroitina 60 comp. bioanimal farmacia vet su-0060">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6"/><path d="M9 8h6l1 12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L9 8z"/><path d="M9.5 14h5"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Farmácia Vet · BioAnimal</span>
+            <h3>Suplemento Articular Condroitina 60 comp.</h3>
+            <div class="prod-meta">
+              <span>Pote 60 comp.</span>
+              <span>Cx. 24 un</span>
+              <span>SKU SU-0060</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="DM-0030" data-cat="farmacia" data-ordem="16"
+                 data-nome="Pomada Dermatológica Cicatrizante 30g" data-caixa="36" data-busca="pomada dermatologica cicatrizante 30g vetpharma farmacia vet dm-0030">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6"/><path d="M9 8h6l1 12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L9 8z"/><path d="M9.5 14h5"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Farmácia Vet · VetPharma</span>
+            <h3>Pomada Dermatológica Cicatrizante 30g</h3>
+            <div class="prod-meta">
+              <span>Bisnaga 30 g</span>
+              <span>Cx. 36 un</span>
+              <span>SKU DM-0030</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="VC-0010" data-cat="farmacia" data-ordem="17"
+                 data-nome="Vacina Múltipla V10 — dose" data-caixa="25" data-busca="vacina multipla v10 — dose premiervet farmacia vet vc-0010">
+          <div class="prod-top"><span class="prod-badge">Refrigerado</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v6"/><path d="M9 8h6l1 12a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2L9 8z"/><path d="M9.5 14h5"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Farmácia Vet · PremierVet</span>
+            <h3>Vacina Múltipla V10 — dose</h3>
+            <div class="prod-meta">
+              <span>Frasco 1 dose</span>
+              <span>Cx. 25 un</span>
+              <span>SKU VC-0010</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="BR-0101" data-cat="brinquedos" data-ordem="18"
+                 data-nome="Mordedor Osso Borracha Natural G" data-caixa="24" data-busca="mordedor osso borracha natural g dogfort brinquedos br-0101">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a13 13 0 0 0 0 18M3.5 9h17M3.5 15h17"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Brinquedos · DogFort</span>
+            <h3>Mordedor Osso Borracha Natural G</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 24 un</span>
+              <span>SKU BR-0101</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="BR-0202" data-cat="brinquedos" data-ordem="19"
+                 data-nome="Bola Maciça Resistente 7cm" data-caixa="48" data-busca="bola macica resistente 7cm dogfort brinquedos br-0202">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a13 13 0 0 0 0 18M3.5 9h17M3.5 15h17"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Brinquedos · DogFort</span>
+            <h3>Bola Maciça Resistente 7cm</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 48 un</span>
+              <span>SKU BR-0202</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="BR-0303" data-cat="brinquedos" data-ordem="20"
+                 data-nome="Pelúcia com Apito Sortida" data-caixa="36" data-busca="pelucia com apito sortida totalcao brinquedos br-0303">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a13 13 0 0 0 0 18M3.5 9h17M3.5 15h17"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Brinquedos · TotalCão</span>
+            <h3>Pelúcia com Apito Sortida</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 36 un</span>
+              <span>SKU BR-0303</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="BR-0404" data-cat="brinquedos" data-ordem="21"
+                 data-nome="Arranhador Torre Gatos 60cm" data-caixa="6" data-busca="arranhador torre gatos 60cm felinepro brinquedos br-0404">
+          <div class="prod-top"><span class="prod-badge">Novo</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 3a13 13 0 0 0 0 18M3.5 9h17M3.5 15h17"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Brinquedos · FelinePro</span>
+            <h3>Arranhador Torre Gatos 60cm</h3>
+            <div class="prod-meta">
+              <span>Caixa unitária</span>
+              <span>Cx. 6 un</span>
+              <span>SKU BR-0404</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CO-0501" data-cat="acessorios" data-ordem="22"
+                 data-nome="Coleira Nylon Ajustável M — sortida" data-caixa="24" data-busca="coleira nylon ajustavel m — sortida agropet coleiras & acessorios co-0501">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a3 3 0 0 0 3 3h1"/><circle cx="12" cy="18" r="2.4"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Coleiras & Acessórios · AgroPet</span>
+            <h3>Coleira Nylon Ajustável M — sortida</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 24 un</span>
+              <span>SKU CO-0501</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CO-0602" data-cat="acessorios" data-ordem="23"
+                 data-nome="Peitoral Anti-Puxão Acolchoado G" data-caixa="12" data-busca="peitoral anti-puxao acolchoado g agropet coleiras & acessorios co-0602">
+          <div class="prod-top"><span class="prod-badge">Alto giro</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a3 3 0 0 0 3 3h1"/><circle cx="12" cy="18" r="2.4"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Coleiras & Acessórios · AgroPet</span>
+            <h3>Peitoral Anti-Puxão Acolchoado G</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 12 un</span>
+              <span>SKU CO-0602</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="GU-0703" data-cat="acessorios" data-ordem="24"
+                 data-nome="Guia Retrátil 5m até 25kg" data-caixa="12" data-busca="guia retratil 5m ate 25kg agropet coleiras & acessorios gu-0703">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a3 3 0 0 0 3 3h1"/><circle cx="12" cy="18" r="2.4"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Coleiras & Acessórios · AgroPet</span>
+            <h3>Guia Retrátil 5m até 25kg</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 12 un</span>
+              <span>SKU GU-0703</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CX-0804" data-cat="acessorios" data-ordem="25"
+                 data-nome="Caixa de Transporte N.3 Homologada" data-caixa="6" data-busca="caixa de transporte n.3 homologada petgroom coleiras & acessorios cx-0804">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a3 3 0 0 0 3 3h1"/><circle cx="12" cy="18" r="2.4"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Coleiras & Acessórios · PetGroom</span>
+            <h3>Caixa de Transporte N.3 Homologada</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 6 un</span>
+              <span>SKU CX-0804</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CM-0905" data-cat="acessorios" data-ordem="26"
+                 data-nome="Cama Retangular Impermeável M" data-caixa="8" data-busca="cama retangular impermeavel m totalcao coleiras & acessorios cm-0905">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a3 3 0 0 0 3 3h1"/><circle cx="12" cy="18" r="2.4"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Coleiras & Acessórios · TotalCão</span>
+            <h3>Cama Retangular Impermeável M</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 8 un</span>
+              <span>SKU CM-0905</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="CB-1006" data-cat="acessorios" data-ordem="27"
+                 data-nome="Comedouro Inox Antiderrapante 900ml" data-caixa="24" data-busca="comedouro inox antiderrapante 900ml agropet coleiras & acessorios cb-1006">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 0 1 16 0"/><path d="M4 12v3a3 3 0 0 0 3 3h1"/><circle cx="12" cy="18" r="2.4"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Coleiras & Acessórios · AgroPet</span>
+            <h3>Comedouro Inox Antiderrapante 900ml</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 24 un</span>
+              <span>SKU CB-1006</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="MQ-1101" data-cat="tosa" data-ordem="28"
+                 data-nome="Máquina de Tosa Profissional 45W" data-caixa="4" data-busca="maquina de tosa profissional 45w petgroom banho & tosa mq-1101">
+          <div class="prod-top"><span class="prod-badge">Profissional</span><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3v18M17 3v18"/><path d="M4 8h6M14 8h6M4 16h6M14 16h6"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Banho & Tosa · PetGroom</span>
+            <h3>Máquina de Tosa Profissional 45W</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 4 un</span>
+              <span>SKU MQ-1101</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="LM-1202" data-cat="tosa" data-ordem="29"
+                 data-nome="Lâmina de Tosa nº 10 Aço Inox" data-caixa="12" data-busca="lamina de tosa nº 10 aco inox petgroom banho & tosa lm-1202">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3v18M17 3v18"/><path d="M4 8h6M14 8h6M4 16h6M14 16h6"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Banho & Tosa · PetGroom</span>
+            <h3>Lâmina de Tosa nº 10 Aço Inox</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 12 un</span>
+              <span>SKU LM-1202</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="TS-1303" data-cat="tosa" data-ordem="30"
+                 data-nome="Tesoura Fio Navalha 7" Curva" data-caixa="12" data-busca="tesoura fio navalha 7" curva petgroom banho & tosa ts-1303">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3v18M17 3v18"/><path d="M4 8h6M14 8h6M4 16h6M14 16h6"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Banho & Tosa · PetGroom</span>
+            <h3>Tesoura Fio Navalha 7" Curva</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 12 un</span>
+              <span>SKU TS-1303</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+        <article class="prod rv" data-sku="RS-1404" data-cat="tosa" data-ordem="31"
+                 data-nome="Rasqueadeira Dupla Face Profissional" data-caixa="24" data-busca="rasqueadeira dupla face profissional petgroom banho & tosa rs-1404">
+          <div class="prod-top"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3v18M17 3v18"/><path d="M4 8h6M14 8h6M4 16h6M14 16h6"/></svg></div>
+          <div class="prod-body">
+            <span class="prod-cat">Banho & Tosa · PetGroom</span>
+            <h3>Rasqueadeira Dupla Face Profissional</h3>
+            <div class="prod-meta">
+              <span>Unidade</span>
+              <span>Cx. 24 un</span>
+              <span>SKU RS-1404</span>
+            </div>
+            <div class="prod-foot">
+              <span class="price-lock">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+                Preço sob cadastro
+              </span>
+              <button class="btn btn--dark btn--sm" data-add type="button">Add à cotação</button>
+            </div>
+          </div>
+        </article>
+          <p class="empty" id="prod-empty" style="display:none">
+            Nenhum produto encontrado com esses filtros.<br>Ajuste a busca ou fale com o comercial.
+          </p>
+        </div>
+
+        <div class="cta-band rv" style="margin-top:48px">
+          <div>
+            <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem)">Preço só para quem tem CNPJ</h2>
+            <p>Aprove seu cadastro e veja tabela, estoque real e prazos direto no painel.</p>
+          </div>
+          <a href="cadastro.html" class="btn">Abrir cadastro</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="quote-bar" id="quote-bar">
+  <div class="wrap">
+    <p class="qtxt"><b id="quote-count">0</b> itens na sua lista de cotação — finalize o cadastro para receber os preços.</p>
+    <button class="btn btn--dark btn--sm" id="quote-clear" type="button">Limpar lista</button>
+    <a href="cadastro.html" class="btn btn--primary btn--sm">Solicitar cotação</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot foot-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/logo.jpg" alt="Mais Atacadista Pet">
+          <span class="brand-txt"><b class="metal">MAIS</b><span>ATACADISTA PET</span></span>
+        </a>
+        <p>Distribuidora atacadista de produtos pet. Atendimento exclusivo a pessoas jurídicas com CNPJ ativo.</p>
+      </div>
+      <div class="foot">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="index.html#categorias">Portfólio</a></li>
+          <li><a href="index.html#logistica">Logística</a></li>
+          <li><a href="index.html#condicoes">Condições comerciais</a></li>
+          <li><a href="index.html#faq">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Lojista</h4>
+        <ul>
+          <li><a href="cadastro.html">Abrir cadastro</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html#contato">Falar com o comercial</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+551140028922">(11) 4002-8922</a></li>
+          <li><a href="mailto:comercial@maisatacadistapet.com.br">comercial@maisatacadistapet.com.br</a></li>
+          <li><a href="#">Rod. Presidente Dutra, km 225<br>Guarulhos/SP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year></span> Mais Atacadista Pet — Todos os direitos reservados.</span>
+      <span>Venda exclusiva para pessoa jurídica · Imagens meramente ilustrativas</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

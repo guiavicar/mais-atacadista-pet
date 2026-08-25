@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastro de Lojista CNPJ | Mais Atacadista Pet</title>
+<meta name="description" content="Abra seu cadastro de lojista na Mais Atacadista Pet. Exclusivo para pessoas jurídicas com CNPJ ativo. Aprovação em até 24 horas úteis.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><strong>CADASTRO B2B:</strong> apenas empresas com CNPJ ativo e CNAE compatível são aprovadas.</span>
+    <div class="topbar-links">
+      <a href="tel:+551140028922">(11) 4002-8922</a>
+      <a href="catalogo.html">Catálogo</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <nav class="nav">
+      <a href="index.html" class="brand" aria-label="Mais Atacadista Pet — início">
+        <img src="assets/logo.jpg" alt="Logomarca Mais Atacadista Pet">
+        <span class="brand-txt"><b class="metal">MAIS</b><span>ATACADISTA PET</span></span>
+      </a>
+      <ul class="menu" id="menu">
+        <li><a href="index.html#categorias">Categorias</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="index.html#condicoes">Condições</a></li>
+        <li><a href="index.html#logistica">Logística</a></li>
+        <li><a href="index.html#faq">Dúvidas</a></li>
+        <li><a href="cadastro.html" class="active">Cadastro</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="catalogo.html" class="btn btn--ghost btn--sm">Ver catálogo</a>
+        <a href="#form" class="btn btn--primary btn--sm">Preencher agora</a>
+        <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Início</a> / Cadastro de lojista</p>
+    <span class="eyebrow">Somente pessoa jurídica</span>
+    <h1 style="font-size:clamp(2rem,4vw,3.2rem)">
+      <span class="metal">CADASTRO</span> <span class="brandtext">DE LOJISTA</span>
+    </h1>
+    <p class="lead" style="margin-top:16px">
+      O acesso à tabela de atacado é liberado após a validação do CNPJ, do CNAE e da situação fiscal
+      da empresa. O processo leva até 24 horas úteis e é conduzido por um gerente de conta da sua região.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="form" style="padding-top:clamp(40px,5vw,64px)">
+  <div class="wrap">
+    <div class="form-grid split" style="grid-template-columns:1.4fr .8fr;gap:26px">
+
+      <div class="form-card rv">
+        <form id="form-cadastro" data-form="#ok-cadastro" novalidate>
+
+          <h3 style="color:var(--gold);margin-bottom:20px">01 — Dados da empresa</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-cnpj">CNPJ *</label>
+              <input id="f-cnpj" name="cnpj" type="text" inputmode="numeric" data-mask="cnpj"
+                     placeholder="00.000.000/0000-00" required autocomplete="off">
+              <span class="msg"></span>
+            </div>
+            <div class="field">
+              <label for="f-ie">Inscrição estadual *</label>
+              <input id="f-ie" name="ie" type="text" placeholder="Número ou ISENTO" required>
+            </div>
+            <div class="field full">
+              <label for="f-razao">Razão social *</label>
+              <input id="f-razao" name="razao" type="text" placeholder="Conforme cartão CNPJ" required>
+            </div>
+            <div class="field full">
+              <label for="f-fantasia">Nome fantasia</label>
+              <input id="f-fantasia" name="fantasia" type="text" placeholder="Nome da loja">
+            </div>
+            <div class="field">
+              <label for="f-seg">Segmento de atuação *</label>
+              <select id="f-seg" name="segmento" required>
+                <option value="">Selecione</option>
+                <option>Petshop</option>
+                <option>Clínica veterinária</option>
+                <option>Agropecuária</option>
+                <option>E-commerce pet</option>
+                <option>Banho e tosa</option>
+                <option>Rede / franquia</option>
+                <option>Hotel / creche pet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-regime">Regime tributário *</label>
+              <select id="f-regime" name="regime" required>
+                <option value="">Selecione</option>
+                <option>Simples Nacional</option>
+                <option>Lucro Presumido</option>
+                <option>Lucro Real</option>
+                <option>MEI</option>
+              </select>
+            </div>
+          </div>
+
+          <h3 style="color:var(--gold);margin:34px 0 20px">02 — Endereço de entrega</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-cep">CEP *</label>
+              <input id="f-cep" name="cep" type="text" inputmode="numeric" data-mask="cep" placeholder="00000-000" required>
+            </div>
+            <div class="field">
+              <label for="f-num">Número *</label>
+              <input id="f-num" name="numero" type="text" placeholder="Nº e complemento" required>
+            </div>
+            <div class="field full">
+              <label for="f-end">Logradouro *</label>
+              <input id="f-end" name="endereco" type="text" placeholder="Rua, avenida ou rodovia" required>
+            </div>
+            <div class="field">
+              <label for="f-cidade">Cidade *</label>
+              <input id="f-cidade" name="cidade" type="text" placeholder="Cidade" required>
+            </div>
+            <div class="field">
+              <label for="f-uf">UF *</label>
+              <select id="f-uf" name="uf" required>
+                <option value="">UF</option>
+                <option>SP</option><option>RJ</option><option>MG</option><option>ES</option>
+                <option>PR</option><option>SC</option><option>RS</option><option>GO</option>
+                <option>MS</option><option>MT</option><option>BA</option><option>DF</option>
+              </select>
+            </div>
+          </div>
+
+          <h3 style="color:var(--gold);margin:34px 0 20px">03 — Responsável pelas compras</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-nome">Nome completo *</label>
+              <input id="f-nome" name="nome" type="text" placeholder="Responsável pelo pedido" required>
+            </div>
+            <div class="field">
+              <label for="f-cargo">Cargo</label>
+              <input id="f-cargo" name="cargo" type="text" placeholder="Ex.: sócio, comprador">
+            </div>
+            <div class="field">
+              <label for="f-email">E-mail corporativo *</label>
+              <input id="f-email" name="email" type="email" placeholder="compras@suaempresa.com.br" required>
+            </div>
+            <div class="field">
+              <label for="f-tel">Telefone / WhatsApp *</label>
+              <input id="f-tel" name="telefone" type="tel" data-mask="phone" placeholder="(00) 00000-0000" required>
+            </div>
+          </div>
+
+          <h3 style="color:var(--gold);margin:34px 0 20px">04 — Perfil de compra</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-volume">Volume mensal estimado *</label>
+              <select id="f-volume" name="volume" required>
+                <option value="">Selecione a faixa</option>
+                <option>R$ 800 – R$ 2.499</option>
+                <option>R$ 2.500 – R$ 5.999</option>
+                <option>R$ 6.000 – R$ 11.999</option>
+                <option>R$ 12.000 – R$ 24.999</option>
+                <option>Acima de R$ 25.000</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-pag">Forma de pagamento pretendida *</label>
+              <select id="f-pag" name="pagamento" required>
+                <option value="">Selecione</option>
+                <option>PIX / à vista</option>
+                <option>Boleto a prazo (sujeito a análise)</option>
+                <option>Cartão corporativo</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="f-obs">Linhas de interesse</label>
+              <textarea id="f-obs" name="observacao" placeholder="Ex.: ração super premium, farmácia veterinária e tapetes higiênicos."></textarea>
+            </div>
+
+            <label class="check-inline full">
+              <input type="checkbox" required>
+              <span>Declaro que as informações são verdadeiras e que represento pessoa jurídica com CNPJ ativo,
+                ciente de que a Mais Atacadista Pet não realiza vendas para consumidor final.</span>
+            </label>
+            <label class="check-inline full">
+              <input type="checkbox" required>
+              <span>Autorizo o tratamento dos dados para análise cadastral e de crédito, conforme a
+                Política de Privacidade e a LGPD.</span>
+            </label>
+
+            <div class="full">
+              <button type="submit" class="btn btn--primary btn--block">Enviar cadastro para análise</button>
+            </div>
+            <p class="full" style="color:var(--tx-3);font-size:.82rem;margin:0;text-align:center">
+              Os documentos serão solicitados por e-mail pelo gerente de conta responsável.
+            </p>
+          </div>
+        </form>
+
+        <div class="form-ok" id="ok-cadastro">
+          <div class="big">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3>Cadastro enviado para análise</h3>
+          <p class="lead" style="margin-inline:auto">Recebemos os dados da sua empresa. Um gerente de conta vai
+            validar CNPJ, CNAE e situação fiscal e retornar em até 24 horas úteis no e-mail informado,
+            já com a tabela de atacado da sua faixa.</p>
+          <div class="hero-actions" style="justify-content:center">
+            <a href="catalogo.html" class="btn btn--ghost">Ver catálogo</a>
+            <a href="index.html" class="btn btn--dark">Voltar ao início</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="form-side rv">
+        <div class="side-box">
+          <h3>Como funciona a análise</h3>
+          <div class="map-row"><span>1. Envio do formulário</span><b>Agora</b></div>
+          <div class="map-row"><span>2. Validação de CNPJ e CNAE</span><b>2h</b></div>
+          <div class="map-row"><span>3. Análise de crédito</span><b>24h</b></div>
+          <div class="map-row"><span>4. Liberação do acesso</span><b>24h</b></div>
+        </div>
+
+        <div class="side-box">
+          <h3>Documentos exigidos</h3>
+          <ul class="check-bullets" style="margin:0;padding:0;border:0">
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Cartão CNPJ atualizado</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Inscrição estadual ou declaração de isenção</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Contrato social, requerimento MEI ou última alteração</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>RG e CPF do sócio responsável</li>
+            <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Licença sanitária e responsável técnico (farmácia vet)</li>
+          </ul>
+        </div>
+
+        <div class="side-box" style="background:var(--grad-panel)">
+          <h3>Já é cliente?</h3>
+          <p>Acesse a área do lojista para consultar tabela, estoque em tempo real e segunda via de boleto.</p>
+          <div class="field" style="margin-top:16px">
+            <label for="l-cnpj">CNPJ</label>
+            <input id="l-cnpj" type="text" inputmode="numeric" data-mask="cnpj" placeholder="00.000.000/0000-00">
+            <span class="msg"></span>
+          </div>
+          <div class="field">
+            <label for="l-senha">Senha</label>
+            <input id="l-senha" type="password" placeholder="••••••••">
+          </div>
+          <button class="btn btn--dark btn--block" type="button">Entrar no painel</button>
+        </div>
+
+        <div class="side-box">
+          <h3>Prefere falar por telefone?</h3>
+          <div class="contact-line">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            <span><b>(11) 4002-8922</b>Central de vendas · seg a sex, 8h às 18h</span>
+          </div>
+          <a href="https://wa.me/551140028922" class="btn btn--ghost btn--block" style="margin-top:16px" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot foot-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/logo.jpg" alt="Mais Atacadista Pet">
+          <span class="brand-txt"><b class="metal">MAIS</b><span>ATACADISTA PET</span></span>
+        </a>
+        <p>Distribuidora atacadista de produtos pet. Atendimento exclusivo a pessoas jurídicas com CNPJ ativo.</p>
+      </div>
+      <div class="foot">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="index.html#categorias">Portfólio</a></li>
+          <li><a href="index.html#logistica">Logística</a></li>
+          <li><a href="index.html#condicoes">Condições comerciais</a></li>
+          <li><a href="index.html#faq">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Lojista</h4>
+        <ul>
+          <li><a href="cadastro.html">Abrir cadastro</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="index.html#contato">Falar com o comercial</a></li>
+        </ul>
+      </div>
+      <div class="foot">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+551140028922">(11) 4002-8922</a></li>
+          <li><a href="mailto:comercial@maisatacadistapet.com.br">comercial@maisatacadistapet.com.br</a></li>
+          <li><a href="#">Rod. Presidente Dutra, km 225<br>Guarulhos/SP</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year></span> Mais Atacadista Pet — Todos os direitos reservados.</span>
+      <span>Venda exclusiva para pessoa jurídica · Imagens meramente ilustrativas</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
